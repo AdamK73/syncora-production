@@ -32,9 +32,9 @@ const FileUpload = ({ apiEndpoint, onChange, value }: Props) => {
               href={value}
               target="_blank"
               rel="noopener_noreferrer"
-              className="ml-2 text-sm text-indigo-500 dark:text-indigo-400 hover:underline"
+              className="ml-2 text-sm text-indigo-500 dark:text-muted hover:underline"
             >
-              View PDF
+              Pozrieť PDF
             </a>
           </div>
         )}
@@ -42,15 +42,16 @@ const FileUpload = ({ apiEndpoint, onChange, value }: Props) => {
           onClick={() => onChange('')}
           variant="ghost"
           type="button"
+          className="bg-muted"
         >
           <X className="h-4 w-4" />
-          Remove Logo
+          Odstrániť logo
         </Button>
       </div>
     )
   }
   return (
-    <div className="w-full bg-muted/30">
+    <div className="w-full bg-muted/30" >
       <UploadDropzone
         endpoint={apiEndpoint}
         onClientUploadComplete={(res) => {
