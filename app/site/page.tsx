@@ -28,7 +28,7 @@ export default async function Home() {
 
         <p className="text-center">Riadenie vášho podniku na jednom mieste</p>
         <div className="bg-gradient-to-r from-primary to-secondary-foreground text-transparent bg-clip-text relative">
-          <h1 className="text-8xl font-bold text-center md:text-[300px]">
+          <h1 className="text-7xl font-bold text-center md:text-[300px]">
             Syncora
           </h1>
         </div>
@@ -44,12 +44,7 @@ export default async function Home() {
         </div>
       </section>
       <section className="flex justify-center items-center flex-col gap-4 md:!mt-20 mt-[-60px]">
-        <h2 className="text-4xl text-center"> Choose what fits you right</h2>
-        <p className="text-muted-foreground text-center">
-          Our straightforward pricing plans are tailored to meet your needs. If
-          {" you're"} not <br />
-          ready to commit you can get started for free.
-        </p>
+        <h2 className="text-4xl text-center">Cenník</h2>
         <div className="flex  justify-center gap-4 flex-wrap mt-6">
           {prices.data.map((card) => (
             //WIP: Wire up free product from stripe
