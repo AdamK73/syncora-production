@@ -1,26 +1,17 @@
-import React from 'react';
+import React from "react";
 
 const Notification = () => {
   return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle
-        cx="12"
-        cy="18"
-        r="4"
-        className={`  fill-[#70799A] text-xl transition-all`}
-      />
-      <path
-        d="M20.5858 18H3.40408C2.62863 18 2 17.3714 2 16.5959C2 16.2151 2.15471 15.8506 2.42864 15.586L3.45759 14.5922C3.84928 14.2139 4.06977 13.6922 4.06814 13.1476L4.05867 9.9946C4.04543 5.58319 7.61789 2 12.0293 2C16.4314 2 20 5.56859 20 9.97067L20 13.1716C20 13.702 20.2107 14.2107 20.5858 14.5858L21.5858 15.5858C21.851 15.851 22 16.2107 22 16.5858C22 17.3668 21.3668 18 20.5858 18Z"
-        className={`  fill-[#C8CDD8] text-xl transition-all`}
-      />
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 256 256">
+  <path className={`  fill-[#70799A] text-xl transition-all`} 
+  d="M224,60a28,28,0,1,1-28-28A28,28,0,0,1,224,60Z" 
+  opacity="0.2"></path>
+  <path className={`  fill-[#70799A] text-xl transition-all`} d="M216,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V56A16,16,0,0,1,48,40h80a8,8,0,0,1,0,16H48V208H200V128a8,8,0,0,1,16,0Zm16-68a36,36,0,1,1-36-36A36,36,0,0,1,232,60Zm-16,0a20,20,0,1,0-20,20A20,20,0,0,0,216,60Z">
+    </path></svg>
+
   );
 };
+
+
 
 export default Notification;

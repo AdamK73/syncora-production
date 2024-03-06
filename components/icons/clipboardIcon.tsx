@@ -1,38 +1,23 @@
-import React from 'react';
+import React from "react";
 
 const ClipboardIcon = () => {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
-      viewBox="0 0 24 24"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 256 256"
     >
-      <rect
-        x="3"
-        y="3"
-        width="18"
-        height="19"
-        rx="3"
-        className={`  fill-[#C8CDD8] text-xl transition-all`}
-      />
       <path
-        d="M14 3C14 1.89543 13.1046 1 12 1C10.8954 1 10 1.89543 10 3H8V5C8 5.55228 8.44772 6 9 6H15C15.5523 6 16 5.55228 16 5V3H14Z"
         className={`  fill-[#70799A] text-xl transition-all`}
-      />
+        d="M192,80v96H104a32,32,0,1,0-32-32H64V80Z"
+        opacity="0.2"
+      ></path>
       <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M7 11C7 10.4477 7.44772 10 8 10L16 10C16.5523 10 17 10.4477 17 11C17 11.5523 16.5523 12 16 12L8 12C7.44772 12 7 11.5523 7 11Z"
         className={`  fill-[#70799A] text-xl transition-all`}
-      />
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M7 15C7 14.4477 7.44772 14 8 14L12 14C12.5523 14 13 14.4477 13 15C13 15.5523 12.5523 16 12 16L8 16C7.44772 16 7 15.5523 7 15Z"
-        className={`  fill-[#70799A] text-xl transition-all`}
-      />
+        d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H53.39a8,8,0,0,0,7.23-4.57,48,48,0,0,1,86.76,0,8,8,0,0,0,7.23,4.57H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM80,144a24,24,0,1,1,24,24A24,24,0,0,1,80,144Zm136,56H159.43a64.39,64.39,0,0,0-28.83-26.16,40,40,0,1,0-53.2,0A64.39,64.39,0,0,0,48.57,200H40V56H216ZM56,96V80a8,8,0,0,1,8-8H192a8,8,0,0,1,8,8v96a8,8,0,0,1-8,8H176a8,8,0,0,1,0-16h8V88H72v8a8,8,0,0,1-16,0Z"
+      ></path>
     </svg>
   );
 };

@@ -28,7 +28,7 @@ const FunnelEditorSidebar = ({ subaccountId }: Props) => {
     <Sheet open={true} modal={false}>
       <Tabs className="w-full " defaultValue="Settings">
         <SheetContent
-          //showX={false}
+          showX={false}
           side="right"
           className={clsx(
             "mt-[97px] w-16 z-[80] shadow-none  p-0 focus:border-none transition-all overflow-hidden",
@@ -38,7 +38,7 @@ const FunnelEditorSidebar = ({ subaccountId }: Props) => {
           <TabList />
         </SheetContent>
         <SheetContent
-          //showX={false}
+          showX={false}
           side="right"
           className={clsx(
             "mt-[97px] w-80 z-[40] shadow-none p-0 mr-16 bg-background h-full transition-all overflow-hidden ",
