@@ -51,13 +51,13 @@ export default async function Home() {
             <Card
               key={card.nickname}
               className={clsx("w-[300px] flex flex-col justify-between", {
-                "border-2 border-primary": card.nickname === "Unlimited Saas",
+                "border-2 border-primary": card.nickname === "Profesionál",
               })}
             >
               <CardHeader>
                 <CardTitle
                   className={clsx("", {
-                    "text-muted-foreground": card.nickname !== "Unlimited Saas",
+                    "text-muted-foreground": card.nickname !== "Profesionál",
                   })}
                 >
                   {card.nickname}
@@ -71,10 +71,11 @@ export default async function Home() {
               </CardHeader>
               <CardContent>
                 <span className="text-4xl font-bold">
-                  {card.unit_amount && card.unit_amount / 100}
+                 €{card.unit_amount && card.unit_amount / 100}
                 </span>
                 <span className="text-muted-foreground">
-                  <span>/ {card.recurring?.interval}</span>
+                  {/* {card.recurring?.interval} */}
+                  <span>/ mesačne</span>
                 </span>
               </CardContent>
               <CardFooter className="flex flex-col items-start gap-4">
@@ -91,14 +92,14 @@ export default async function Home() {
                 <Link
                   href={`/agency?plan=${card.id}`}
                   className={clsx(
-                    "w-full text-center bg-primary p-2 rounded-md",
+                    "w-full text-center text-background bg-primary p-2 rounded-md",
                     {
                       "!bg-muted-foreground":
-                        card.nickname !== "Unlimited Saas",
+                        card.nickname !== "Profesionál",
                     }
                   )}
                 >
-                  Get Started
+                  Začať
                 </Link>
               </CardFooter>
             </Card>
@@ -115,13 +116,13 @@ export default async function Home() {
               <CardDescription>{pricingCards[0].description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <span className="text-4xl font-bold">$0</span>
-              <span>/ month</span>
+              <span className="text-4xl font-bold">€0</span>
+              <span>/ mesačne</span>
             </CardContent>
             <CardFooter className="flex flex-col  items-start gap-4 ">
               <div>
                 {pricingCards
-                  .find((c) => c.title === "Starter")
+                  .find((c) => c.title === "Začiatočník")
                   ?.features.map((feature) => (
                     <div key={feature} className="flex gap-2">
                       <Check />
@@ -132,13 +133,13 @@ export default async function Home() {
               <Link
                 href="/agency"
                 className={clsx(
-                  "w-full text-center bg-primary p-2 rounded-md",
+                  "w-full text-center bg-brand p-2 rounded-md",
                   {
                     "!bg-muted-foreground": true,
                   }
                 )}
               >
-                Get Started
+                Začať
               </Link>
             </CardFooter>
           </Card>

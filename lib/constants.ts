@@ -34,7 +34,7 @@ export const pricingCards = [
     price: 'Zadarmo',
     duration: '',
     highlight: 'Key features',
-    features: ["3 podúčty", "2 členovia tímu", "Neobmedzený počet potrubí"],
+    features: ["2 podúčty", "2 členovia tímu", "Neobmedzený počet leads"],
     priceId: '',
   },
   {
@@ -47,7 +47,7 @@ export const pricingCards = [
     priceId: 'price_1Or5qjBNoNakQl9kSFq8LOYR',
   },
   {
-    title: 'Základný',
+    title: 'Základny',
     description: 'For serious agency owners',
     price: '€49',
     duration: 'mesačne',
