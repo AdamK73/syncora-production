@@ -286,7 +286,7 @@ const AgencyDetails = ({ data }: Props) => {
                       <div>
                         <FormLabel>Whitelabel</FormLabel>
                         <FormDescription>
-                          Zapnutím režimu "whilelabel" sa zobrazí vaše logo
+                          Zapnutím režimu whilelabel sa zobrazí vaše logo
                           na všetkých podúčtoch v predvolenom nastavení.
                         </FormDescription>
                       </div>
@@ -364,7 +364,7 @@ const AgencyDetails = ({ data }: Props) => {
                     </FormItem>
                   )}
                 />
-                
+
               <FormField
                 disabled={isLoading}
                 control={form.control}
