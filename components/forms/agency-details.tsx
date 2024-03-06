@@ -55,7 +55,9 @@ type Props = {
 };
 
 const FormSchema = z.object({
-  name: z.string().min(2, { message: "Agency name must be atleast 2 chars." }),
+  name: z
+    .string()
+    .min(2, { message: "Názov organizácie musí mať aspoň 2 znaky." }),
   companyEmail: z.string().min(1),
   companyPhone: z.string().min(1),
   whiteLabel: z.boolean(),
@@ -156,7 +158,7 @@ const AgencyDetails = ({ data }: Props) => {
         goal: 5,
       });
       toast({
-        title: "Created Agency",
+        title: "Vytvorená organizácia",
       });
       if (data?.id) return router.refresh();
       if (response) {
@@ -166,8 +168,8 @@ const AgencyDetails = ({ data }: Props) => {
       console.log(error);
       toast({
         variant: "destructive",
-        title: "Oppse!",
-        description: "could not create your agency",
+        title: "Uppsie!",
+        description: "nepodarilo sa vytvoriť organizáciu",
       });
     }
   };
@@ -197,10 +199,9 @@ const AgencyDetails = ({ data }: Props) => {
     <AlertDialog>
       <Card className="w-full">
         <CardHeader>
-          <CardTitle>Agency Information</CardTitle>
+          <CardTitle>Informácie</CardTitle>
           <CardDescription>
-            Lets create an agency for you business. You can edit agency settings
-            later from the agency settings tab.
+            Vytvoríme pre vás organizáciu. Nastavenia môžete upraviť neskôr.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -215,7 +216,7 @@ const AgencyDetails = ({ data }: Props) => {
                 name="agencyLogo"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Agency Logo</FormLabel>
+                    <FormLabel>Logo</FormLabel>
                     <FormControl>
                       <FileUpload
                         apiEndpoint="agencyLogo"
@@ -234,9 +235,9 @@ const AgencyDetails = ({ data }: Props) => {
                   name="name"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Agency Name</FormLabel>
+                      <FormLabel>Názov spoločnosti</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your agency name" {...field} />
+                        <Input placeholder="váš názov spoločnosti" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -247,9 +248,9 @@ const AgencyDetails = ({ data }: Props) => {
                   name="companyEmail"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Agency Email</FormLabel>
+                      <FormLabel>Firemný e-mail</FormLabel>
                       <FormControl>
-                        <Input readOnly placeholder="Email" {...field} />
+                        <Input readOnly placeholder="e-mail" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -263,9 +264,9 @@ const AgencyDetails = ({ data }: Props) => {
                   name="companyPhone"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Agency Phone Number</FormLabel>
+                      <FormLabel>Telefónne číslo</FormLabel>
                       <FormControl>
-                        <Input placeholder="Phone" {...field} />
+                        <Input placeholder="+421..." {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -281,11 +282,12 @@ const AgencyDetails = ({ data }: Props) => {
                   return (
                     <FormItem className="flex flex-row items-center justify-between rounded-lg border gap-4 p-4">
                       <div>
-                        <FormLabel>Whitelabel Agency</FormLabel>
+                        <FormLabel>Whitelabel</FormLabel>
                         <FormDescription>
-                          Turning on whilelabel mode will show your agency logo
-                          to all sub accounts by default. You can overwrite this
-                          functionality through sub account settings.
+                          Zapnutím režimu whilelabel sa zobrazí iba vaše logo na
+                          všetkých podúčtoch v predvolenom nastavení. Túto
+                          funkciu môžete prepísať prostredníctvom nastavení
+                          podúčtov.
                         </FormDescription>
                       </div>
 
@@ -305,9 +307,9 @@ const AgencyDetails = ({ data }: Props) => {
                 name="address"
                 render={({ field }) => (
                   <FormItem className="flex-1">
-                    <FormLabel>Address</FormLabel>
+                    <FormLabel>Adresa</FormLabel>
                     <FormControl>
-                      <Input placeholder="123 st..." {...field} />
+                      <Input placeholder="Ulica a číslo..." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -320,23 +322,9 @@ const AgencyDetails = ({ data }: Props) => {
                   name="city"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>City</FormLabel>
+                      <FormLabel>Mesto</FormLabel>
                       <FormControl>
-                        <Input placeholder="City" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  disabled={isLoading}
-                  control={form.control}
-                  name="state"
-                  render={({ field }) => (
-                    <FormItem className="flex-1">
-                      <FormLabel>State</FormLabel>
-                      <FormControl>
-                        <Input placeholder="State" {...field} />
+                        <Input placeholder="Mesto" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -348,9 +336,12 @@ const AgencyDetails = ({ data }: Props) => {
                   name="zipCode"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Zipcpde</FormLabel>
+                      <FormLabel>PSČ</FormLabel>
                       <FormControl>
-                        <Input placeholder="Zipcode" {...field} />
+                        <Input
+                          placeholder="Poštové smerovacie číslo"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -363,14 +354,19 @@ const AgencyDetails = ({ data }: Props) => {
                 name="country"
                 render={({ field }) => (
                   <FormItem className="flex-1">
-                    <FormLabel>Country</FormLabel>
+                    <FormLabel>Krajina</FormLabel>
                     <FormControl>
-                      <Input placeholder="Country" {...field} />
+                      <Input
+                        placeholder="Krajina"
+                        defaultValue="Slovensko"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
+
               {data?.id && (
                 <div className="flex flex-col gap-2">
                   <FormLabel>Create A Goal</FormLabel>
@@ -397,7 +393,7 @@ const AgencyDetails = ({ data }: Props) => {
                 </div>
               )}
               <Button type="submit" disabled={isLoading}>
-                {isLoading ? <Loading /> : "Save Agency Information"}
+                {isLoading ? <Loading /> : "Uložiť informácie"}
               </Button>
             </form>
           </Form>
