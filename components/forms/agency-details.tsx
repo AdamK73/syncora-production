@@ -156,7 +156,7 @@ const AgencyDetails = ({ data }: Props) => {
         goal: 5,
       });
       toast({
-        title: "Created Agency",
+        title: "Profil vytvorený",
       });
       if (data?.id) return router.refresh();
       if (response) {
@@ -166,7 +166,7 @@ const AgencyDetails = ({ data }: Props) => {
       console.log(error);
       toast({
         variant: "destructive",
-        title: "Oppse!",
+        title: "Uppsie!",
         description: "could not create your agency",
       });
     }
@@ -186,8 +186,8 @@ const AgencyDetails = ({ data }: Props) => {
       console.log(error);
       toast({
         variant: "destructive",
-        title: "Oppse!",
-        description: "could not delete your agency ",
+        title: "Uppsie!",
+        description: "nepodarilo sa nám vymazať profil ",
       });
     }
     setDeletingAgency(false);
@@ -197,10 +197,10 @@ const AgencyDetails = ({ data }: Props) => {
     <AlertDialog>
       <Card className="w-full">
         <CardHeader>
-          <CardTitle>Agency Information</CardTitle>
+          <CardTitle>Informácie</CardTitle>
           <CardDescription>
-            Lets create an agency for you business. You can edit agency settings
-            later from the agency settings tab.
+            Podme si spoločne vytvoriť váš profil. Neskôr ho môžete vždy upraviť
+            v nastaveniach.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -215,7 +215,7 @@ const AgencyDetails = ({ data }: Props) => {
                 name="agencyLogo"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Agency Logo</FormLabel>
+                    <FormLabel>Vaše logo</FormLabel>
                     <FormControl>
                       <FileUpload
                         apiEndpoint="agencyLogo"

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Syne } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
@@ -8,10 +8,10 @@ import ModalProvider from "@/providers/modal-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as SonnarToaster } from "@/components/ui/sonner";
 
-const font = DM_Sans({ subsets: ["latin"] });
+const font = Syne({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Syncora | CRM",
+  title: "Plura",
   description: "All in one Agency Solution",
 };
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="sk" suppressHydrationWarning>
       <body className={font.className}>
         <ThemeProvider
           attribute="class"

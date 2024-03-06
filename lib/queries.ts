@@ -251,32 +251,32 @@ export const upsertAgency = async (agency: Agency, price?: Plan) => {
         SidebarOption: {
           create: [
             {
-              name: "Dashboard",
+              name: "Domov",
               icon: "category",
               link: `/agency/${agency.id}`,
             },
             {
-              name: "Launchpad",
+              name: "Onboarding",
               icon: "clipboardIcon",
               link: `/agency/${agency.id}/launchpad`,
             },
             {
-              name: "Billing",
+              name: "Účtovanie",
               icon: "payment",
               link: `/agency/${agency.id}/billing`,
             },
             {
-              name: "Settings",
+              name: "settings",
               icon: "settings",
               link: `/agency/${agency.id}/settings`,
             },
             {
-              name: "Sub Accounts",
+              name: "Klienti",
               icon: "person",
               link: `/agency/${agency.id}/all-subaccounts`,
             },
             {
-              name: "Team",
+              name: "Teatestm",
               icon: "shield",
               link: `/agency/${agency.id}/team`,
             },
@@ -344,7 +344,7 @@ export const upsertSubAccount = async (subAccount: SubAccount) => {
             link: `/subaccount/${subAccount.id}/launchpad`,
           },
           {
-            name: "Settings",
+            name: "Nastavenie",
             icon: "settings",
             link: `/subaccount/${subAccount.id}/settings`,
           },
