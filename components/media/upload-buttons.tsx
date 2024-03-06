@@ -1,16 +1,16 @@
-'use client'
-import { useModal } from '@/providers/modal-provider'
-import React from 'react'
-import { Button } from '../ui/button'
-import CustomModal from '../global/custom-modal'
-import UploadMediaForm from '../forms/upload-media'
+"use client";
+import { useModal } from "@/providers/modal-provider";
+import React from "react";
+import { Button } from "../ui/button";
+import CustomModal from "../global/custom-modal";
+import UploadMediaForm from "../forms/upload-media";
 
 type Props = {
-  subaccountId: string
-}
+  subaccountId: string;
+};
 
 const MediaUploadButton = ({ subaccountId }: Props) => {
-  const { isOpen, setOpen, setClose } = useModal()
+  const { isOpen, setOpen, setClose } = useModal();
 
   return (
     <Button
@@ -22,12 +22,12 @@ const MediaUploadButton = ({ subaccountId }: Props) => {
           >
             <UploadMediaForm subaccountId={subaccountId}></UploadMediaForm>
           </CustomModal>
-        )
+        );
       }}
     >
-      Upload
+      Vložiť
     </Button>
-  )
-}
+  );
+};
 
-export default MediaUploadButton
+export default MediaUploadButton;
