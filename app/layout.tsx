@@ -11,8 +11,8 @@ import { Toaster as SonnarToaster } from "@/components/ui/sonner";
 const font = Syne({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Plura",
-  description: "All in one Agency Solution",
+  title: "Syncora | CRM riešenie",
+  description: "Riešenie All in one pre agentúry",
 };
 
 export default function RootLayout({
