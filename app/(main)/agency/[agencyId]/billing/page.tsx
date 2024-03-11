@@ -79,8 +79,8 @@ const page = async ({ params }: Props) => {
           customerId={agencySubscription?.customerId || ''}
           amt={
             agencySubscription?.Subscription?.active === true
-              ? currentPlanDetails?.price || '$0'
-              : '$0'
+              ? currentPlanDetails?.price || '€0'
+              : '€0'
           }
           buttonCta={
             agencySubscription?.Subscription?.active === true

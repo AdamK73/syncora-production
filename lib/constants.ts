@@ -30,7 +30,7 @@ import Warning from '@/components/icons/warning'
 export const pricingCards = [
   {
     title: 'Začiatočník',
-    description: 'Perfect for trying out plura',
+    description: 'Ideálne na vyskúšanie',
     price: 'Zadarmo',
     duration: '',
     highlight: 'Key features',
@@ -39,7 +39,7 @@ export const pricingCards = [
   },
   {
     title: 'Profesionál',
-    description: 'The ultimate agency kit',
+    description: 'Špičkový agentúrny kit',
     price: '€199',
     duration: 'mesačne',
     highlight: 'Key features',
@@ -48,7 +48,7 @@ export const pricingCards = [
   },
   {
     title: 'Základny',
-    description: 'For serious agency owners',
+    description: 'Pre serióznych majiteľov agentúr',
     price: '€49',
     duration: 'mesačne',
     highlight: 'Everything in Starter, plus',
