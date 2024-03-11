@@ -266,17 +266,17 @@ export const upsertAgency = async (agency: Agency, price?: Plan) => {
               link: `/agency/${agency.id}/billing`,
             },
             {
-              name: "settings",
+              name: "Nastavenie",
               icon: "settings",
               link: `/agency/${agency.id}/settings`,
             },
             {
-              name: "Klienti",
+              name: "Podúčty",
               icon: "person",
               link: `/agency/${agency.id}/all-subaccounts`,
             },
             {
-              name: "Teatestm",
+              name: "Tím",
               icon: "shield",
               link: `/agency/${agency.id}/team`,
             },
@@ -339,7 +339,7 @@ export const upsertSubAccount = async (subAccount: SubAccount) => {
       SidebarOption: {
         create: [
           {
-            name: "Launchpad",
+            name: "Onboarding",
             icon: "clipboardIcon",
             link: `/subaccount/${subAccount.id}/launchpad`,
           },
@@ -349,32 +349,32 @@ export const upsertSubAccount = async (subAccount: SubAccount) => {
             link: `/subaccount/${subAccount.id}/settings`,
           },
           {
-            name: "Funnels",
+            name: "Konverzné stránky",
             icon: "pipelines",
             link: `/subaccount/${subAccount.id}/funnels`,
           },
           {
-            name: "Media",
+            name: "Média",
             icon: "database",
             link: `/subaccount/${subAccount.id}/media`,
           },
+          // {
+          //   name: "Automations",
+          //   icon: "chip",
+          //   link: `/subaccount/${subAccount.id}/automations`,
+          // },
           {
-            name: "Automations",
-            icon: "chip",
-            link: `/subaccount/${subAccount.id}/automations`,
-          },
-          {
-            name: "Pipelines",
+            name: "Kanban",
             icon: "flag",
             link: `/subaccount/${subAccount.id}/pipelines`,
           },
           {
-            name: "Contacts",
+            name: "Kontakty",
             icon: "person",
             link: `/subaccount/${subAccount.id}/contacts`,
           },
           {
-            name: "Dashboard",
+            name: "Domov",
             icon: "category",
             link: `/subaccount/${subAccount.id}`,
           },

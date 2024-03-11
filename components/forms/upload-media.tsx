@@ -51,11 +51,11 @@ const UploadMediaForm = ({ subaccountId }: Props) => {
       const response = await createMedia(subaccountId, values)
       await saveActivityLogsNotification({
         agencyId: undefined,
-        description: `Uploaded a media file | ${response.name}`,
+        description: `Nahraný súbor| ${response.name}`,
         subaccountId,
       })
 
-      toast({ title: 'Succes', description: 'Uploaded media' })
+      toast({ title: 'Úspech 🎉', description: 'Nahrané médiá' })
       router.refresh()
     } catch (error) {
       console.log(error)
@@ -70,10 +70,10 @@ const UploadMediaForm = ({ subaccountId }: Props) => {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle>Media Information</CardTitle>
+        <CardTitle>Informácie</CardTitle>
         <CardDescription>
-          Please enter the details for your file
-        </CardDescription>
+        Zadajte údaje o svojom súbore
+      </CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -114,9 +114,9 @@ const UploadMediaForm = ({ subaccountId }: Props) => {
             />
             <Button
               type="submit"
-              className="mt-4"
+              className="mt-4 bg-muted"
             >
-              Upload Media
+              Nahrať
             </Button>
           </form>
         </Form>

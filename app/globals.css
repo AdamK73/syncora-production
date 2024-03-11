@@ -22,7 +22,7 @@ B (255 */
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
-    --brand: 193 250 79;
+    --brand: 75 87% 65%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
@@ -46,6 +46,7 @@ B (255 */
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
+    --brand: 75 87% 65%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;

@@ -9,6 +9,7 @@ import {
 import { db } from '@/lib/db'
 import { getStripeOAuthLink } from '@/lib/utils'
 import { CheckCircleIcon } from 'lucide-react'
+import CheckCircle from '@/components/icons/check_circled'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -70,13 +71,13 @@ const LaunchPadPage = async ({ params, searchParams }: Props) => {
       <div className="w-full h-full max-w-[800px]">
         <Card className="border-none">
           <CardHeader>
-            <CardTitle>Lets get started!</CardTitle>
+            <CardTitle>Začnime!  🙌🏻</CardTitle>
             <CardDescription>
-              Follow the steps below to get your account setup.
+            Postupujte podľa nasledujúcich krokov, aby ste si správne nastavili svoje konto.            
             </CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
-            <div className="flex justify-between items-center w-full border p-4 rounded-lg gap-2">
+            {/* <div className="flex justify-between items-center w-full border p-4 rounded-lg gap-2">
               <div className="flex md:items-center gap-4 flex-col md:!flex-row">
                 <Image
                   src="/assets/appstore.png"
@@ -88,6 +89,32 @@ const LaunchPadPage = async ({ params, searchParams }: Props) => {
                 <p> Save the website as a shortcut on your mobile device</p>
               </div>
               <Button>Start</Button>
+            </div> */}
+           
+            <div className="flex justify-between items-center w-full border p-4 rounded-lg gap-2">
+              <div className="flex md:items-center gap-4 flex-col md:!flex-row">
+                <Image
+                  src={agencyDetails.agencyLogo}
+                  alt="app logo"
+                  height={80}
+                  width={80}
+                  className="rounded-md object-contain"
+                />
+                <p> Vyplňte všetky svoje údaje</p>
+              </div>
+              {allDetailsExist ? (
+                <CheckCircleIcon
+                  size={50}
+                  className="text-primary p-2 flex-shrink-0"
+                />
+              ) : (
+                <Link
+                  className="bg-primary py-2 px-4 rounded-md text-white"
+                  href={`/agency/${params.agencyId}/settings`}
+                >
+                  Start
+                </Link>
+              )}
             </div>
             <div className="flex justify-between items-center w-full border p-4 rounded-lg gap-2">
               <div className="flex md:items-center gap-4 flex-col md:!flex-row">
@@ -99,8 +126,8 @@ const LaunchPadPage = async ({ params, searchParams }: Props) => {
                   className="rounded-md object-contain"
                 />
                 <p>
-                  Connect your stripe account to accept payments and see your
-                  dashboard.
+                  Pripojte svoje konto Stripe, aby ste mohli prijímať platby a vidieť svoje
+                  tržby.
                 </p>
               </div>
               {agencyDetails.connectAccountId || connectedStripeAccount ? (
@@ -112,31 +139,6 @@ const LaunchPadPage = async ({ params, searchParams }: Props) => {
                 <Link
                   className="bg-primary py-2 px-4 rounded-md text-white"
                   href={stripeOAuthLink}
-                >
-                  Start
-                </Link>
-              )}
-            </div>
-            <div className="flex justify-between items-center w-full border p-4 rounded-lg gap-2">
-              <div className="flex md:items-center gap-4 flex-col md:!flex-row">
-                <Image
-                  src={agencyDetails.agencyLogo}
-                  alt="app logo"
-                  height={80}
-                  width={80}
-                  className="rounded-md object-contain"
-                />
-                <p> Fill in all your bussiness details</p>
-              </div>
-              {allDetailsExist ? (
-                <CheckCircleIcon
-                  size={50}
-                  className="text-primary p-2 flex-shrink-0"
-                />
-              ) : (
-                <Link
-                  className="bg-primary py-2 px-4 rounded-md text-white"
-                  href={`/agency/${params.agencyId}/settings`}
                 >
                   Start
                 </Link>

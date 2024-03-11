@@ -36,6 +36,9 @@ import {
 } from "../ui/form";
 import { useToast } from "../ui/use-toast";
 
+
+import '/app/globals.css';
+
 import * as z from "zod";
 import FileUpload from "../global/file-upload";
 import { Input } from "../ui/input";
@@ -234,9 +237,9 @@ const AgencyDetails = ({ data }: Props) => {
                   name="name"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Agency Name</FormLabel>
+                      <FormLabel>Meno firmy/klienta</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your agency name" {...field} />
+                        <Input placeholder="firma/klient" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -247,9 +250,9 @@ const AgencyDetails = ({ data }: Props) => {
                   name="companyEmail"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Agency Email</FormLabel>
+                      <FormLabel>Firemný e-mail</FormLabel>
                       <FormControl>
-                        <Input readOnly placeholder="Email" {...field} />
+                        <Input readOnly placeholder="e-mail" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -263,9 +266,9 @@ const AgencyDetails = ({ data }: Props) => {
                   name="companyPhone"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Agency Phone Number</FormLabel>
+                      <FormLabel>Telefónne číslo</FormLabel>
                       <FormControl>
-                        <Input placeholder="Phone" {...field} />
+                        <Input placeholder="telefónne číslo" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -281,11 +284,10 @@ const AgencyDetails = ({ data }: Props) => {
                   return (
                     <FormItem className="flex flex-row items-center justify-between rounded-lg border gap-4 p-4">
                       <div>
-                        <FormLabel>Whitelabel Agency</FormLabel>
+                        <FormLabel>Whitelabel</FormLabel>
                         <FormDescription>
-                          Turning on whilelabel mode will show your agency logo
-                          to all sub accounts by default. You can overwrite this
-                          functionality through sub account settings.
+                          Zapnutím režimu whilelabel sa zobrazí vaše logo
+                          na všetkých podúčtoch v predvolenom nastavení.
                         </FormDescription>
                       </div>
 
@@ -299,15 +301,16 @@ const AgencyDetails = ({ data }: Props) => {
                   );
                 }}
               />
+              
               <FormField
                 disabled={isLoading}
                 control={form.control}
                 name="address"
                 render={({ field }) => (
                   <FormItem className="flex-1">
-                    <FormLabel>Address</FormLabel>
+                    <FormLabel>Adresa</FormLabel>
                     <FormControl>
-                      <Input placeholder="123 st..." {...field} />
+                      <Input placeholder="ulica a číslo" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -320,23 +323,9 @@ const AgencyDetails = ({ data }: Props) => {
                   name="city"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>City</FormLabel>
+                      <FormLabel>Mesto</FormLabel>
                       <FormControl>
-                        <Input placeholder="City" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  disabled={isLoading}
-                  control={form.control}
-                  name="state"
-                  render={({ field }) => (
-                    <FormItem className="flex-1">
-                      <FormLabel>State</FormLabel>
-                      <FormControl>
-                        <Input placeholder="State" {...field} />
+                        <Input placeholder="mesto" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -348,24 +337,43 @@ const AgencyDetails = ({ data }: Props) => {
                   name="zipCode"
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Zipcpde</FormLabel>
+                      <FormLabel>PSČ</FormLabel>
                       <FormControl>
-                        <Input placeholder="Zipcode" {...field} />
+                        <Input placeholder="poštové smerovacie číslo" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
+
+              <FormField
+                  disabled={isLoading}
+                  control={form.control}
+                  name="state"
+                  render={({ field }) => (
+                    <FormItem className="flex-1">
+                      <FormLabel>State</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="State"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
               <FormField
                 disabled={isLoading}
                 control={form.control}
                 name="country"
                 render={({ field }) => (
                   <FormItem className="flex-1">
-                    <FormLabel>Country</FormLabel>
+                    <FormLabel>Krajina</FormLabel>
                     <FormControl>
-                      <Input placeholder="Country" {...field} />
+                      <Input placeholder="Krajina" defaultValue="Slovensko" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -396,9 +404,11 @@ const AgencyDetails = ({ data }: Props) => {
                   />
                 </div>
               )}
-              <Button type="submit" disabled={isLoading}>
-                {isLoading ? <Loading /> : "Save Agency Information"}
+              <div className=" p-4 mt-4 items-center justify-between">
+              <Button className="w-full" style={{ backgroundColor: '#C1FA4F' }} type="submit" disabled={isLoading}>
+                {isLoading ? <Loading /> : "Dokončiť profil"}
               </Button>
+                </div>
             </form>
           </Form>
 
@@ -414,7 +424,7 @@ const AgencyDetails = ({ data }: Props) => {
               </div>
               <AlertDialogTrigger
                 disabled={isLoading || deletingAgency}
-                className="text-red-600 p-2 text-center mt-2 rounded-md hove:bg-red-600 hover:text-white whitespace-nowrap"
+                className="text-brand p-2 text-center mt-2 rounded-md hove:bg-red-600 hover:text-white whitespace-nowrap"
               >
                 {deletingAgency ? "Deleting..." : "Delete Agency"}
               </AlertDialogTrigger>
