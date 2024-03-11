@@ -112,7 +112,7 @@ const LaunchPadPage = async ({ params, searchParams }: Props) => {
                   className="bg-primary py-2 px-4 rounded-md text-white"
                   href={`/agency/${params.agencyId}/settings`}
                 >
-                  Start
+                  Pridať
                 </Link>
               )}
             </div>
@@ -140,7 +140,7 @@ const LaunchPadPage = async ({ params, searchParams }: Props) => {
                   className="bg-primary py-2 px-4 rounded-md text-white"
                   href={stripeOAuthLink}
                 >
-                  Start
+                  Pridať
                 </Link>
               )}
             </div>

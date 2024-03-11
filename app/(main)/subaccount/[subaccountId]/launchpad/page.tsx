@@ -107,10 +107,10 @@ const LaunchPad = async ({ params, searchParams }: Props) => {
                 <p> Vyplňte všetky svoje údaje</p>
                 </div>
                 {allDetailsExist ? (
-                 <CheckCircle
+                 <CheckCircleIcon
                  className=" text-primary p-2 flex-shrink-0"
-                 width="50" // Your custom width
-                height="50" // Your custom height // Inline styles here
+                 size={50}
+
                />
                 ) : (
                   <Link
@@ -137,10 +137,10 @@ const LaunchPad = async ({ params, searchParams }: Props) => {
                 </div>
                 {subaccountDetails.connectAccountId ||
                 connectedStripeAccount ? (
-                  <CheckCircle
+                  <CheckCircleIcon
                   className=" text-primary p-2 flex-shrink-0"
-                  width="50" 
-                 height="50" 
+                  size={50}
+
                 />
                 ) : (
                   <Link
