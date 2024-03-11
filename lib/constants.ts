@@ -53,7 +53,7 @@ export const pricingCards = [
     duration: 'mesačne',
     highlight: 'Everything in Starter, plus',
     features: ["Neobmedzený počet podúčtov", "Neobmedzený počet členov tímu"],
-    priceId: 'price_1Or5qjBNoNakQl9kJgVJHN5f',
+    priceId: 'price_1OsydMBNoNakQl9kndfIUwxj',
   },
 ]
 
