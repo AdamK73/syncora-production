@@ -28,7 +28,7 @@ export default async function Home() {
 
         <p className="text-center">Riadenie vášho podniku na jednom mieste</p>
         <div className="bg-gradient-to-r from-primary to-secondary-foreground text-transparent bg-clip-text relative">
-          <h1 className="text-8xl font-bold text-center md:text-[300px]">
+          <h1 className="text-7xl font-bold text-center md:text-[300px]">
             Syncora
           </h1>
         </div>
@@ -44,25 +44,20 @@ export default async function Home() {
         </div>
       </section>
       <section className="flex justify-center items-center flex-col gap-4 md:!mt-20 mt-[-60px]">
-        <h2 className="text-4xl text-center"> Choose what fits you right</h2>
-        <p className="text-muted-foreground text-center">
-          Our straightforward pricing plans are tailored to meet your needs. If
-          {" you're"} not <br />
-          ready to commit you can get started for free.
-        </p>
+        <h2 className="text-4xl text-center">Cenník</h2>
         <div className="flex  justify-center gap-4 flex-wrap mt-6">
           {prices.data.map((card) => (
             //WIP: Wire up free product from stripe
             <Card
               key={card.nickname}
               className={clsx("w-[300px] flex flex-col justify-between", {
-                "border-2 border-primary": card.nickname === "Unlimited Saas",
+                "border-2 border-primary": card.nickname === "Profesionál",
               })}
             >
               <CardHeader>
                 <CardTitle
                   className={clsx("", {
-                    "text-muted-foreground": card.nickname !== "Unlimited Saas",
+                    "text-muted-foreground": card.nickname !== "Profesionál",
                   })}
                 >
                   {card.nickname}
@@ -76,10 +71,11 @@ export default async function Home() {
               </CardHeader>
               <CardContent>
                 <span className="text-4xl font-bold">
-                  {card.unit_amount && card.unit_amount / 100}
+                 €{card.unit_amount && card.unit_amount / 100}
                 </span>
                 <span className="text-muted-foreground">
-                  <span>/ {card.recurring?.interval}</span>
+                  {/* {card.recurring?.interval} */}
+                  <span>/ mesačne</span>
                 </span>
               </CardContent>
               <CardFooter className="flex flex-col items-start gap-4">
@@ -96,14 +92,14 @@ export default async function Home() {
                 <Link
                   href={`/agency?plan=${card.id}`}
                   className={clsx(
-                    "w-full text-center bg-primary p-2 rounded-md",
+                    "w-full text-center text-background bg-primary p-2 rounded-md",
                     {
                       "!bg-muted-foreground":
-                        card.nickname !== "Unlimited Saas",
+                        card.nickname !== "Profesionál",
                     }
                   )}
                 >
-                  Get Started
+                  Začať
                 </Link>
               </CardFooter>
             </Card>
@@ -120,13 +116,13 @@ export default async function Home() {
               <CardDescription>{pricingCards[0].description}</CardDescription>
             </CardHeader>
             <CardContent>
-              <span className="text-4xl font-bold">$0</span>
-              <span>/ month</span>
+              <span className="text-4xl font-bold">€0</span>
+              <span>/ mesačne</span>
             </CardContent>
             <CardFooter className="flex flex-col  items-start gap-4 ">
               <div>
                 {pricingCards
-                  .find((c) => c.title === "Starter")
+                  .find((c) => c.title === "Začiatočník")
                   ?.features.map((feature) => (
                     <div key={feature} className="flex gap-2">
                       <Check />
@@ -137,13 +133,13 @@ export default async function Home() {
               <Link
                 href="/agency"
                 className={clsx(
-                  "w-full text-center bg-primary p-2 rounded-md",
+                  "w-full text-center bg-brand p-2 rounded-md",
                   {
                     "!bg-muted-foreground": true,
                   }
                 )}
               >
-                Get Started
+                Začať
               </Link>
             </CardFooter>
           </Card>

@@ -57,6 +57,17 @@ const MenuOptions = ({
     [defaultOpen]
   )
 
+    // We use the state to control the open/close of the sidebar
+    const [sidebarOpen, setSidebarOpen] = useState(defaultOpen);
+
+    // This function will be called when a menu item is clicked
+    const toggleSidebar = () => {
+      setSidebarOpen(!sidebarOpen);
+    };
+
+
+ 
+
   useEffect(() => {
     setIsMounted(true)
   }, [])
@@ -275,24 +286,18 @@ const MenuOptions = ({
                       val = <result.path />
                     }
                     return (
-                      <CommandItem
-                        key={sidebarOptions.id}
-                        className="md:w-[320px] w-full"
-                      >
-                  <SheetClose>
-
-                        <Link
-                          href={sidebarOptions.link}
-                          className="flex items-center gap-2 hover:bg-transparent rounded-md transition-all md:w-full w-[320px]"
-                        >
-                          {val}
-
-                          <span>{sidebarOptions.name}</span>
-                        </Link>
-                  </SheetClose>
-
+                      <CommandItem key={sidebarOptions.id} className="md:w-[320px] w-full">
+                        <SheetClose asChild onClick={toggleSidebar}>
+                          <Link
+                            href={sidebarOptions.link}
+                            className="flex items-center gap-2 hover:bg-transparent rounded-md transition-all md:w-full w-[320px]"
+                          >
+                            {val}
+                            <span>{sidebarOptions.name}</span>
+                          </Link>
+                        </SheetClose>
                       </CommandItem>
-                    )
+                    );
                   })}
              
             </Command>

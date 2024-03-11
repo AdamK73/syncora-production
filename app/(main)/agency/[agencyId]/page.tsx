@@ -7,6 +7,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
+import {
+  getLanesWithTicketAndTags,
+  getPipelineDetails,
+  updateLanesOrder,
+  updateTicketsOrder,
+} from '@/lib/queries'
+
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
