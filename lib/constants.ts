@@ -79,7 +79,7 @@ export const icons = [
   },
   {
     value: 'pipelines',
-    label: 'Pipelines',
+    label: 'Test',
     path: Pipelines,
   },
   {

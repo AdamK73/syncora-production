@@ -1,4 +1,5 @@
 import BlurPage from '@/components/global/blur-page'
+import CheckCircle from '@/components/icons/check_circled'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -74,14 +75,14 @@ const LaunchPad = async ({ params, searchParams }: Props) => {
       <div className="flex flex-col justify-center items-center">
         <div className="w-full h-full max-w-[800px]">
           <Card className="border-none ">
-            <CardHeader>
-              <CardTitle>Lets get started!</CardTitle>
-              <CardDescription>
-                Follow the steps below to get your account setup correctly.
-              </CardDescription>
-            </CardHeader>
+          <CardHeader>
+            <CardTitle>Začnime!  🙌🏻</CardTitle>
+            <CardDescription>
+            Postupujte podľa nasledujúcich krokov, aby ste si správne nastavili svoje konto.            
+            </CardDescription>
+          </CardHeader>
             <CardContent className="flex flex-col gap-4">
-              <div className="flex justify-between items-center w-full h-20 border p-4 rounded-lg ">
+              {/* <div className="flex justify-between items-center w-full h-20 border p-4 rounded-lg ">
                 <div className="flex items-center gap-4">
                   <Image
                     src="/appstore.png"
@@ -93,37 +94,8 @@ const LaunchPad = async ({ params, searchParams }: Props) => {
                   <p>Save the website as a shortcut on your mobile devide</p>
                 </div>
                 <Button>Start</Button>
-              </div>
-              <div className="flex justify-between items-center w-full h-20 border p-4 rounded-lg">
-                <div className="flex items-center gap-4">
-                  <Image
-                    src="/stripelogo.png"
-                    alt="App logo"
-                    height={80}
-                    width={80}
-                    className="rounded-md object-contain "
-                  />
-                  <p>
-                    Connect your stripe account to accept payments. Stripe is
-                    used to run payouts.
-                  </p>
-                </div>
-                {subaccountDetails.connectAccountId ||
-                connectedStripeAccount ? (
-                  <CheckCircleIcon
-                    size={50}
-                    className=" text-primary p-2 flex-shrink-0"
-                  />
-                ) : (
-                  <Link
-                    className="bg-primary py-2 px-4 rounded-md text-white"
-                    href={stripeOAuthLink}
-                  >
-                    Start
-                  </Link>
-                )}
-              </div>
-              <div className="flex justify-between items-center w-full h-20 border p-4 rounded-lg">
+              </div> */}
+               <div className="flex justify-between items-center w-full h-20 border p-4 rounded-lg">
                 <div className="flex items-center gap-4">
                   <Image
                     src={subaccountDetails.subAccountLogo}
@@ -132,22 +104,54 @@ const LaunchPad = async ({ params, searchParams }: Props) => {
                     width={80}
                     className="rounded-md object-contain p-4"
                   />
-                  <p>Fill in all your business details.</p>
+                <p> Vyplňte všetky svoje údaje</p>
                 </div>
                 {allDetailsExist ? (
-                  <CheckCircleIcon
-                    size={50}
-                    className=" text-primary p-2 flex-shrink-0"
-                  />
+                 <CheckCircle
+                 className=" text-primary p-2 flex-shrink-0"
+                 width="50" // Your custom width
+                height="50" // Your custom height // Inline styles here
+               />
                 ) : (
                   <Link
                     className="bg-primary py-2 px-4 rounded-md text-white"
                     href={`/subaccount/${subaccountDetails.id}/settings`}
                   >
-                    Start
+                    Pridať
                   </Link>
                 )}
               </div>
+              <div className="flex justify-between items-center w-full h-20 border p-4 rounded-lg">
+                <div className="flex items-center gap-4">
+                  <Image
+                    src="/assets/stripelogo.png"
+                    alt="App logo"
+                    height={80}
+                    width={80}
+                    className="rounded-md object-contain "
+                  />
+                  <p>
+                  Pripojte svoje konto Stripe, aby ste mohli prijímať platby a vidieť svoje
+                  tržby.
+                  </p>
+                </div>
+                {subaccountDetails.connectAccountId ||
+                connectedStripeAccount ? (
+                  <CheckCircle
+                  className=" text-primary p-2 flex-shrink-0"
+                  width="50" 
+                 height="50" 
+                />
+                ) : (
+                  <Link
+                    className="bg-primary py-2 px-4 rounded-md text-white"
+                    href={stripeOAuthLink}
+                  >
+                    Pridať
+                  </Link>
+                )}
+              </div>
+             
             </CardContent>
           </Card>
         </div>

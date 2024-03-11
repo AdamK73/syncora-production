@@ -21,8 +21,8 @@ const SubscriptionHelper = ({ customerId, planExists, prices }: Props) => {
     if (plan)
       setOpen(
         <CustomModal
-          title="Upgrade Plan!"
-          subheading="Get started today to get access to premium features"
+          title="Vylepšite svoj plán"
+          subheading="Začnite ešte dnes a získajte prístup k prémiovým funkciám"
         >
           <SubscriptionFormWrapper
             planExists={planExists}
@@ -38,7 +38,7 @@ const SubscriptionHelper = ({ customerId, planExists, prices }: Props) => {
       )
   }, [plan])
 
-  return <div>SubscriptionHelper</div>
+  return <div>Pomocník pre predplatné</div>
 }
 
 export default SubscriptionHelper

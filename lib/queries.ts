@@ -250,14 +250,36 @@ export const upsertAgency = async (agency: Agency, price?: Plan) => {
         ...agency,
         SidebarOption: {
           create: [
-            // Ensure "Domov" is always first
-            { name: "Domov", icon: "category", link: `/agency/${agency.id}` },
-            { name: "Onboarding", icon: "clipboardIcon", link: `/agency/${agency.id}/launchpad` },
-            { name: "Účtovanie", icon: "payment", link: `/agency/${agency.id}/billing` },
-            { name: "Klienti", icon: "person", link: `/agency/${agency.id}/all-subaccounts` },
-            { name: "Tím", icon: "shield", link: `/agency/${agency.id}/team` },
-            // Ensure "Nastavenie" is always last
-            { name: "Nastavenie", icon: "settings", link: `/agency/${agency.id}/settings` },
+            {
+              name: "Domov",
+              icon: "category",
+              link: `/agency/${agency.id}`,
+            },
+            {
+              name: "Onboarding",
+              icon: "clipboardIcon",
+              link: `/agency/${agency.id}/launchpad`,
+            },
+            {
+              name: "Účtovanie",
+              icon: "payment",
+              link: `/agency/${agency.id}/billing`,
+            },
+            {
+              name: "Nastavenie",
+              icon: "settings",
+              link: `/agency/${agency.id}/settings`,
+            },
+            {
+              name: "Podúčty",
+              icon: "person",
+              link: `/agency/${agency.id}/all-subaccounts`,
+            },
+            {
+              name: "Tím",
+              icon: "shield",
+              link: `/agency/${agency.id}/team`,
+            },
           ],
         },
       },
